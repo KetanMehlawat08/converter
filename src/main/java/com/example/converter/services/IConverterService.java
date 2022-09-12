@@ -11,6 +11,6 @@ import java.io.IOException;
 
 @Service
 public interface IConverterService {
-    Flux<Converter> getConversion(String conversionId);
+    Flux<Converter> getConversion();
     Mono<Converter> createConversion(ConverterDto converterDto) throws IOException;
 }

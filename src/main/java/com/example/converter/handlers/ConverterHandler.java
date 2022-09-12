@@ -19,8 +19,7 @@ public class ConverterHandler {
     private IConverterService converterService;
 
     public Mono<ServerResponse> getConversion(ServerRequest serverRequest){
-        String conversionId=serverRequest.pathVariable("conversionId");
-        return ServerResponse.ok().body(converterService.getConversion(conversionId), Converter.class);
+        return ServerResponse.ok().body(converterService.getConversion(), Converter.class);
     }
     public Mono<ServerResponse> createConversion(ServerRequest serverRequest){
         var conversionDTOMono=serverRequest.bodyToMono(ConverterDto.class);

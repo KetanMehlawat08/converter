@@ -29,8 +29,8 @@ public class ConverterService implements IConverterService {
     private ConverterRepository converterRepository;
 
     @Override
-    public Flux<Converter> getConversion(String conversionId) {
-        return converterRepository.findAll().filter(converter -> converter.getStatus().equals(conversionId));
+    public Flux<Converter> getConversion() {
+        return converterRepository.findAll();/*.filter(converter -> converter.getStatus().equals(conversionId))*/
     }
 
     @Override
